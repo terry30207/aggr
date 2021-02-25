@@ -47,3 +47,4 @@ if __name__ == '__main__':
     
     scores = model.evaluate(X_test, y_test, verbose=0)
     print("Baseline Error: %.2f%%" % (100-scores[1]*100))
+    model.save("global.h5")
