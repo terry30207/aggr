@@ -18,7 +18,7 @@ if __name__ == '__main__':
     model_list=[]
     weight_list=[]
     #Reload model
-    for root, dirs, files in os.walk(".", topdown=False):
+    for root, dirs, files in os.walk("..", topdown=False):
         for name in files:
             path=os.path.join(root, name)
             print(path)
