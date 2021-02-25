@@ -36,7 +36,7 @@ if __name__ == '__main__':
     weight=reduce(numpy.add,weight_list)
     weight=weight/float(len(weight_list))
 
-    tmodel=load_model(model_list[0])
+    tmodel=load_model("global.h5")
     scores = tmodel.evaluate(X_test, y_test, verbose=0)
     print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
@@ -44,7 +44,6 @@ if __name__ == '__main__':
     model=load_model("global.h5")
     model.set_weights(weight)
 
-    
     scores = model.evaluate(X_test, y_test, verbose=0)
     print("Baseline Error: %.2f%%" % (100-scores[1]*100))
     model.save("global.h5")
